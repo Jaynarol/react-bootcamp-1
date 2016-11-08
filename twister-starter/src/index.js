@@ -2,14 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import customStyle from './styles/custom.scss'
 import mainStyle from './styles/main.scss'
+import MainLayout from './layouts/MainLayout'
+import BodyContainer from './components/BodyContainer'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 const App = () => (
-  <div className='container'>
-    <div className='jumbotron'>
-      <h1 style={{ color: '#000' }}>Hello, world!</h1>
-      <p>...</p>
-      <p><a className='btn btn-primary btn-lg' href='#' role='button'>Learn more</a></p>
-    </div>
-  </div>
+  <Router history={ browserHistory }>
+    <Route path='/' component={ MainLayout }>
+        <IndexRoute component={ BodyContainer } />
+        <Route path=':ownerUsername' component={ BodyContainer } />
+     </Route>
+  </Router>
 )
 ReactDOM.render(<App />, document.getElementById('react-root'))
