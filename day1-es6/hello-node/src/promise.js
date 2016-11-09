@@ -5,8 +5,8 @@ const logReadFile = (data) => {
     return 111;
 }
 const readThenLog = (filename) => {
-    return new Promise((then, reject) => {
-        fs.readFile(filename, (err, data) => then(data));
+    return new Promise((nextThen, reject) => {
+        fs.readFile(filename, (err, data) => nextThen(data));
     })
 }
 
