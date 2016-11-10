@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react'
-import TodoItem from '../containers/TodoItem'
+import TodoItem from '../components/TodoItem'
 
 const TodoList = (props) => (
     <ul>
-        {props.todoitems.map((todo) => <TodoItem key={todo.id} id={todo.id} {...todo} />)}
+        {props.todoitems.map((todo) => <TodoItem key={todo.id} toggleTodo={props.toggleTodo} {...todo} />)}
     </ul>
 )
 

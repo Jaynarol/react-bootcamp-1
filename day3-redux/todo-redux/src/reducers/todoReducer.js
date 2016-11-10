@@ -4,19 +4,17 @@ const initialState = []
 
 const todoReducer = (state = initialState, action) => {
     switch(action.type){
-        case ADD_TODO:{
 
+        case ADD_TODO:{
             const newTodo = {
                 id: state.length + 1,
                 text: action.payload.text,
                 completed: false
             }
-
             return [
                 ...state,
                 newTodo
             ]
-
         }
 
         case TOGGLE_TODO:{
